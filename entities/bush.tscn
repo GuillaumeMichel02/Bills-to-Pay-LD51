@@ -1,0 +1,87 @@
+[gd_scene load_steps=10 format=3 uid="uid://dm88880tmlqay"]
+
+[ext_resource type="Script" path="res://entities/bush.gd" id="1_yv1ao"]
+[ext_resource type="Texture2D" uid="uid://dx5owo86pt6wn" path="res://spritesheet/world.png" id="2_exx0x"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rjk48"]
+atlas = ExtResource("2_exx0x")
+region = Rect2(0, 192, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fd0r0"]
+atlas = ExtResource("2_exx0x")
+region = Rect2(0, 256, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ercbr"]
+atlas = ExtResource("2_exx0x")
+region = Rect2(0, 320, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_t0tw0"]
+animations = [{
+"frames": [SubResource("AtlasTexture_rjk48")],
+"loop": true,
+"name": &"Default",
+"speed": 5.0
+}, {
+"frames": [SubResource("AtlasTexture_fd0r0")],
+"loop": true,
+"name": &"Fruits",
+"speed": 5.0
+}, {
+"frames": [SubResource("AtlasTexture_ercbr")],
+"loop": true,
+"name": &"Withered",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_iw3j5"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2d:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_bkavc"]
+resource_name = "hit"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2d:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(2, 0), Vector2(-2, 0), Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_mvmdm"]
+_data = {
+"RESET": SubResource("Animation_iw3j5"),
+"hit": SubResource("Animation_bkavc")
+}
+
+[node name="Bush" type="StaticBody2D" groups=["world_entities"]]
+collision_layer = 5
+script = ExtResource("1_yv1ao")
+
+[node name="CollisionPolygon2d" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-30, 5, -25, 20, -5, 24, 24, 23, 28, 18, 28, 0, 19, -20, 3, -26, -12, -19)
+
+[node name="AnimatedSprite2d" type="AnimatedSprite2D" parent="."]
+frames = SubResource("SpriteFrames_t0tw0")
+animation = &"Default"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_mvmdm")
+}

@@ -1,0 +1,58 @@
+[gd_scene load_steps=9 format=3 uid="uid://7iqah36s72j0"]
+
+[ext_resource type="Texture2D" uid="uid://dx5owo86pt6wn" path="res://spritesheet/world.png" id="1_qfh6i"]
+[ext_resource type="Script" path="res://entities/flower.gd" id="1_ttbd8"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_yuqn7"]
+radius = 29.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s6vfv"]
+atlas = ExtResource("1_qfh6i")
+region = Rect2(0, 448, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mjelx"]
+atlas = ExtResource("1_qfh6i")
+region = Rect2(0, 384, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sxki4"]
+atlas = ExtResource("1_qfh6i")
+region = Rect2(64, 384, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aaymh"]
+atlas = ExtResource("1_qfh6i")
+region = Rect2(64, 448, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_82awg"]
+animations = [{
+"frames": [SubResource("AtlasTexture_s6vfv")],
+"loop": true,
+"name": &"Gold Flower",
+"speed": 5.0
+}, {
+"frames": [SubResource("AtlasTexture_mjelx")],
+"loop": true,
+"name": &"Heart Flower",
+"speed": 5.0
+}, {
+"frames": [SubResource("AtlasTexture_sxki4")],
+"loop": true,
+"name": &"Purple Flower",
+"speed": 5.0
+}, {
+"frames": [SubResource("AtlasTexture_aaymh")],
+"loop": true,
+"name": &"White Flower",
+"speed": 5.0
+}]
+
+[node name="Flower" type="StaticBody2D" groups=["world_entities"]]
+collision_layer = 4
+collision_mask = 0
+script = ExtResource("1_ttbd8")
+
+[node name="FlowerCollisionBox" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_yuqn7")
+
+[node name="FlowerSprite" type="AnimatedSprite2D" parent="."]
+frames = SubResource("SpriteFrames_82awg")
+animation = &"Heart Flower"

@@ -1,0 +1,39 @@
+[gd_scene load_steps=7 format=3 uid="uid://svbtepkb7rvk"]
+
+[ext_resource type="Texture2D" uid="uid://dx5owo86pt6wn" path="res://spritesheet/world.png" id="1_1jfqg"]
+[ext_resource type="Script" path="res://entities/shell.gd" id="1_5fq0b"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_nhkon"]
+radius = 35.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jvgnp"]
+atlas = ExtResource("1_1jfqg")
+region = Rect2(448, 384, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y7plw"]
+atlas = ExtResource("1_1jfqg")
+region = Rect2(384, 384, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xmbe7"]
+animations = [{
+"frames": [SubResource("AtlasTexture_jvgnp")],
+"loop": true,
+"name": &"Clam",
+"speed": 5.0
+}, {
+"frames": [SubResource("AtlasTexture_y7plw")],
+"loop": true,
+"name": &"Conch",
+"speed": 5.0
+}]
+
+[node name="Shell" type="StaticBody2D" groups=["world_entities"]]
+collision_layer = 4
+script = ExtResource("1_5fq0b")
+
+[node name="ShellCollisionBox" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_nhkon")
+
+[node name="ShellSprite" type="AnimatedSprite2D" parent="."]
+frames = SubResource("SpriteFrames_xmbe7")
+animation = &"Conch"

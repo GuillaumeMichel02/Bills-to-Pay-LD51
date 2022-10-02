@@ -1,0 +1,182 @@
+[gd_scene load_steps=12 format=3 uid="uid://b8qdl7vcfq7qs"]
+
+[ext_resource type="Texture2D" uid="uid://dx5owo86pt6wn" path="res://spritesheet/world.png" id="1_jq4bj"]
+[ext_resource type="Script" path="res://entities/slime.gd" id="1_mtjg1"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yvfi8"]
+atlas = ExtResource("1_jq4bj")
+region = Rect2(384, 576, 128, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5ld5u"]
+atlas = ExtResource("1_jq4bj")
+region = Rect2(384, 512, 128, 64)
+
+[sub_resource type="Animation" id="Animation_c6qod"]
+resource_name = "Bounce"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2d:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1.41421),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0.500002, 6), Vector2(-4.41074e-06, 6), Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2d:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.05469, 0.90625), Vector2(1, 0.90625), Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_yb7yl"]
+resource_name = "Death"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2d:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(0.258816, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2d:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_akdyb"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2d:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2d:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2d:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ourmh"]
+_data = {
+"Bounce": SubResource("Animation_c6qod"),
+"Death": SubResource("Animation_yb7yl"),
+"RESET": SubResource("Animation_akdyb")
+}
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_l1dac"]
+radius = 28.0
+height = 86.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2vv4h"]
+radius = 412.311
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_w6mj0"]
+radius = 32.0
+height = 98.0
+
+[node name="Slime" type="CharacterBody2D" groups=["Ennemy", "world_entities"]]
+z_index = 1
+y_sort_enabled = true
+collision_layer = 7
+script = ExtResource("1_mtjg1")
+
+[node name="Sprite2d" type="Sprite2D" parent="."]
+y_sort_enabled = true
+texture = SubResource("AtlasTexture_yvfi8")
+offset = Vector2(0, 8)
+
+[node name="Sprite2d" type="Sprite2D" parent="Sprite2d"]
+position = Vector2(-0.108433, -1.34447)
+z_index = 1
+texture = SubResource("AtlasTexture_5ld5u")
+offset = Vector2(-0.0118604, -53.958)
+
+[node name="Hurt" type="Timer" parent="."]
+wait_time = 0.5
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "Bounce"
+libraries = {
+"": SubResource("AnimationLibrary_ourmh")
+}
+
+[node name="CollisionShape2d" type="CollisionShape2D" parent="."]
+position = Vector2(-1, -6)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_l1dac")
+
+[node name="RandomDirectionTimer" type="Timer" parent="."]
+
+[node name="PlayerDetection" type="Area2D" parent="."]
+position = Vector2(0, -8)
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2d" type="CollisionShape2D" parent="PlayerDetection"]
+position = Vector2(-1, 15)
+shape = SubResource("CircleShape2D_2vv4h")
+
+[node name="HarmHitBox" type="Area2D" parent="."]
+position = Vector2(0, -27)
+collision_mask = 2
+
+[node name="CollisionShape2d2" type="CollisionShape2D" parent="HarmHitBox"]
+position = Vector2(0, 21)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_w6mj0")
+
+[connection signal="timeout" from="Hurt" to="." method="_on_hurt_timeout"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
+[connection signal="timeout" from="RandomDirectionTimer" to="." method="_on_random_direction_timer_timeout"]
+[connection signal="body_entered" from="PlayerDetection" to="." method="_on_player_detection_body_entered"]
+[connection signal="body_exited" from="PlayerDetection" to="." method="_on_player_detection_body_exited"]
+[connection signal="body_entered" from="HarmHitBox" to="." method="_on_harm_hit_box_body_entered"]

@@ -1,0 +1,34 @@
+[gd_scene load_steps=6 format=3 uid="uid://dbehys2uph2cx"]
+
+[ext_resource type="Script" path="res://entities/tiled_grass.gd" id="1_b13pn"]
+[ext_resource type="Texture2D" uid="uid://dx5owo86pt6wn" path="res://spritesheet/world.png" id="1_gnuhb"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_inob7"]
+atlas = ExtResource("1_gnuhb")
+region = Rect2(128, 384, 64, 64)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d2mca"]
+size = Vector2(57, 57)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_l5jb2"]
+radius = 16.0
+
+[node name="TiledGrass" type="StaticBody2D" groups=["world_entities"]]
+collision_layer = 4
+script = ExtResource("1_b13pn")
+
+[node name="Sprite2d" type="Sprite2D" parent="."]
+texture = SubResource("AtlasTexture_inob7")
+
+[node name="CollisionShape2d" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, 0.5)
+shape = SubResource("RectangleShape2D_d2mca")
+
+[node name="DestructionCollision" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2d" type="CollisionShape2D" parent="DestructionCollision"]
+shape = SubResource("CircleShape2D_l5jb2")
+
+[connection signal="body_entered" from="DestructionCollision" to="." method="_on_destruction_collision_body_entered"]

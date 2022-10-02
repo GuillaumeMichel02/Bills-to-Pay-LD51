@@ -1,0 +1,35 @@
+[gd_scene load_steps=7 format=3 uid="uid://cpnqw85g347dm"]
+
+[ext_resource type="Texture2D" uid="uid://dx5owo86pt6wn" path="res://spritesheet/world.png" id="1_gxv6s"]
+[ext_resource type="Script" path="res://entities/monster_fertilizer.gd" id="2_jk6ye"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tvlkm"]
+atlas = ExtResource("1_gxv6s")
+region = Rect2(128, 576, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_58lmy"]
+atlas = ExtResource("1_gxv6s")
+region = Rect2(192, 576, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1vfq4"]
+animations = [{
+"frames": [SubResource("AtlasTexture_tvlkm"), SubResource("AtlasTexture_58lmy")],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hpigw"]
+radius = 29.0
+
+[node name="MonsterFertilizer" type="StaticBody2D" groups=["world_entities"]]
+collision_layer = 4
+collision_mask = 0
+script = ExtResource("2_jk6ye")
+
+[node name="MonsterFertilizerSprite" type="AnimatedSprite2D" parent="."]
+frames = SubResource("SpriteFrames_1vfq4")
+playing = true
+
+[node name="CollisionShape2d" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_hpigw")

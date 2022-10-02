@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3 uid="uid://b7ap6a523eopu"]
+
+[ext_resource type="Script" path="res://entities/chest.gd" id="1_yftyw"]
+[ext_resource type="Texture2D" uid="uid://dx5owo86pt6wn" path="res://spritesheet/world.png" id="2_ug0ks"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uyec7"]
+atlas = ExtResource("2_ug0ks")
+region = Rect2(0, 576, 128, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qse7v"]
+atlas = ExtResource("2_ug0ks")
+region = Rect2(0, 512, 128, 64)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eqvuu"]
+size = Vector2(100, 73)
+
+[node name="Chest" type="StaticBody2D" groups=["world_entities"]]
+collision_layer = 5
+script = ExtResource("1_yftyw")
+
+[node name="Sprite2d" type="Sprite2D" parent="."]
+y_sort_enabled = true
+texture = SubResource("AtlasTexture_uyec7")
+
+[node name="Sprite2d2" type="Sprite2D" parent="."]
+position = Vector2(0, -64)
+z_index = 2
+texture = SubResource("AtlasTexture_qse7v")
+
+[node name="CollisionShape2d" type="CollisionShape2D" parent="."]
+position = Vector2(1, -13.5)
+shape = SubResource("RectangleShape2D_eqvuu")

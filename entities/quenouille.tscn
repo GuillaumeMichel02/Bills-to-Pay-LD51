@@ -1,0 +1,31 @@
+[gd_scene load_steps=6 format=3 uid="uid://dje17okt0rqib"]
+
+[ext_resource type="Script" path="res://entities/quenouille.gd" id="1_d03nj"]
+[ext_resource type="Texture2D" uid="uid://dx5owo86pt6wn" path="res://spritesheet/world.png" id="2_rych0"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_yuqn7"]
+radius = 38.0132
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_44agk"]
+atlas = ExtResource("2_rych0")
+region = Rect2(448, 448, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_82awg"]
+animations = [{
+"frames": [SubResource("AtlasTexture_44agk")],
+"loop": true,
+"name": &"Quenouille",
+"speed": 5.0
+}]
+
+[node name="Flower" type="StaticBody2D" groups=["Quenouille", "world_entities"]]
+collision_layer = 4
+collision_mask = 0
+script = ExtResource("1_d03nj")
+
+[node name="FlowerCollisionBox" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_yuqn7")
+
+[node name="FlowerSprite" type="AnimatedSprite2D" parent="."]
+frames = SubResource("SpriteFrames_82awg")
+animation = &"Quenouille"

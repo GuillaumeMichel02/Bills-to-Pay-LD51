@@ -1,0 +1,691 @@
+[gd_scene load_steps=42 format=3 uid="uid://doqdffgpolgay"]
+
+[ext_resource type="Script" path="res://Player/Player.gd" id="1_rhoxs"]
+[ext_resource type="Texture2D" uid="uid://dx5owo86pt6wn" path="res://spritesheet/world.png" id="2_l6cu3"]
+[ext_resource type="Texture2D" uid="uid://brg21n43wgbo6" path="res://Player/character.png" id="3_72y1n"]
+[ext_resource type="Texture2D" uid="uid://dr5dvj8v6cob1" path="res://spritesheet/swing.png" id="4_fevg5"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_myxoq"]
+atlas = ExtResource("2_l6cu3")
+region = Rect2(267, 293, 44, 23)
+
+[sub_resource type="Animation" id="Animation_mpsgb"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Player/BodySprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Player/Tool/ToolSprite:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-10, 23)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Player/Tool/ToolSprite:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-0.404495]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Player/Tool/ToolSprite:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Player/Tool/ToolSprite:z_index")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [-1]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Player/HandSprite:animation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"Left1"]
+}
+
+[sub_resource type="Animation" id="Animation_et2sc"]
+resource_name = "moving"
+length = 0.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Player/BodySprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -10), Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_g01la"]
+resource_name = "resting"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Player/BodySprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.1, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 3,
+"values": [Vector2(0, 0), Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_coy7w"]
+resource_name = "swing"
+length = 0.5
+
+[sub_resource type="Animation" id="Animation_d85ny"]
+resource_name = "swing_down"
+length = 0.2
+step = 0.025
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Player/Tool/ToolSprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [Vector2(-15, -0.999998), Vector2(3, -7), Vector2(3, -7)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Player/Tool/ToolSprite:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [3.83248, 0.536855, 0.536855]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Player/Tool/ToolSprite:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [Vector2(1, -1), Vector2(1, -1), Vector2(1, -1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Player/Tool/ToolSprite:z_index")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [0, 0, 0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Player/HandSprite:animation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [&"Down1", &"Down2", &"Down2"]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Player/BodySprite:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.025, 0.075, 0.125, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 3,
+"values": [Vector2(0, 0), Vector2(0, 0), Vector2(0, 10), Vector2(0, 0), Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_gv2mb"]
+resource_name = "swing_left"
+length = 0.2
+step = 0.025
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Player/Tool/ToolSprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [Vector2(-22, 10), Vector2(-10, 23), Vector2(-10, 23)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Player/Tool/ToolSprite:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [1.40813, -0.404495, -0.404495]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Player/Tool/ToolSprite:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [Vector2(-1, 1), Vector2(-1, 1), Vector2(-1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Player/HandSprite:animation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [&"Left1", &"Left2", &"Left2"]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Player/BodySprite:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.025, 0.075, 0.125, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 3,
+"values": [Vector2(0, 0), Vector2(0, 0), Vector2(0, 10), Vector2(0, 0), Vector2(0, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Player/Tool/ToolSprite:z_index")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [-1, -1, -1]
+}
+
+[sub_resource type="Animation" id="Animation_ld1im"]
+resource_name = "swing_right"
+length = 0.2
+step = 0.025
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Player/Tool/ToolSprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [Vector2(26, 5), Vector2(9, 18), Vector2(9, 18)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Player/Tool/ToolSprite:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [4.75153, 0.431259, 0.431259]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Player/Tool/ToolSprite:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [Vector2(1, 1), Vector2(1, 1), Vector2(1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Player/Tool/ToolSprite:z_index")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [0, 0, 0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Player/HandSprite:animation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [&"Right1", &"Right2", &"Right2"]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Player/BodySprite:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.025, 0.075, 0.125, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 3,
+"values": [Vector2(0, 0), Vector2(0, 0), Vector2(0, 10), Vector2(0, 0), Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_hdow6"]
+resource_name = "swing_up"
+length = 0.2
+step = 0.025
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Player/Tool/ToolSprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [Vector2(17, 0), Vector2(5, 40), Vector2(5, 40)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Player/Tool/ToolSprite:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [4.27285, 3.60585, 3.60585]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Player/HandSprite:animation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [&"Up1", &"Up2", &"Up2"]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Player/BodySprite:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.025, 0.075, 0.125, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 3,
+"values": [Vector2(0, 0), Vector2(0, 0), Vector2(0, 10), Vector2(0, 0), Vector2(0, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Player/Tool/ToolSprite:scale")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [Vector2(1, -1), Vector2(1, -1), Vector2(1, -1)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Player/Tool/ToolSprite:z_index")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [-1, -1, -1]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0gxtp"]
+_data = {
+"RESET": SubResource("Animation_mpsgb"),
+"moving": SubResource("Animation_et2sc"),
+"resting": SubResource("Animation_g01la"),
+"swing": SubResource("Animation_coy7w"),
+"swing_down": SubResource("Animation_d85ny"),
+"swing_left": SubResource("Animation_gv2mb"),
+"swing_right": SubResource("Animation_ld1im"),
+"swing_up": SubResource("Animation_hdow6")
+}
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3xfli"]
+atlas = ExtResource("3_72y1n")
+region = Rect2(0, 0, 64, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_06a7h"]
+atlas = ExtResource("3_72y1n")
+region = Rect2(192, 0, 64, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xbr2h"]
+atlas = ExtResource("3_72y1n")
+region = Rect2(64, 0, 64, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ewtab"]
+atlas = ExtResource("3_72y1n")
+region = Rect2(128, 0, 64, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_uvqyn"]
+animations = [{
+"frames": [SubResource("AtlasTexture_3xfli")],
+"loop": true,
+"name": &"down",
+"speed": 5.0
+}, {
+"frames": [SubResource("AtlasTexture_06a7h")],
+"loop": true,
+"name": &"left",
+"speed": 5.0
+}, {
+"frames": [SubResource("AtlasTexture_xbr2h")],
+"loop": true,
+"name": &"right",
+"speed": 5.0
+}, {
+"frames": [SubResource("AtlasTexture_ewtab")],
+"loop": true,
+"name": &"up",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yyvpl"]
+radius = 26.0
+height = 52.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7u51i"]
+atlas = ExtResource("2_l6cu3")
+region = Rect2(320, 512, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g30qq"]
+atlas = ExtResource("2_l6cu3")
+region = Rect2(256, 448, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f2526"]
+atlas = ExtResource("2_l6cu3")
+region = Rect2(256, 576, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8rgvg"]
+atlas = ExtResource("2_l6cu3")
+region = Rect2(256, 192, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wqpdy"]
+atlas = ExtResource("2_l6cu3")
+region = Rect2(320, 448, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_00u6b"]
+atlas = ExtResource("2_l6cu3")
+region = Rect2(320, 576, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4kr57"]
+animations = [{
+"frames": [SubResource("AtlasTexture_7u51i")],
+"loop": true,
+"name": &"Axe",
+"speed": 5.0
+}, {
+"frames": [SubResource("AtlasTexture_g30qq")],
+"loop": true,
+"name": &"Fishing Rod",
+"speed": 5.0
+}, {
+"frames": [SubResource("AtlasTexture_f2526")],
+"loop": true,
+"name": &"Hoe",
+"speed": 5.0
+}, {
+"frames": [SubResource("AtlasTexture_8rgvg")],
+"loop": true,
+"name": &"Nothing",
+"speed": 5.0
+}, {
+"frames": [SubResource("AtlasTexture_wqpdy")],
+"loop": true,
+"name": &"Pickaxe",
+"speed": 5.0
+}, {
+"frames": [SubResource("AtlasTexture_00u6b")],
+"loop": true,
+"name": &"Sword",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4n5x5"]
+size = Vector2(58, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0s4l3"]
+atlas = ExtResource("4_fevg5")
+region = Rect2(0, 0, 120, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hawmu"]
+atlas = ExtResource("4_fevg5")
+region = Rect2(120, 0, 120, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nu2ki"]
+atlas = ExtResource("4_fevg5")
+region = Rect2(240, 0, 120, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rfq40"]
+atlas = ExtResource("4_fevg5")
+region = Rect2(0, 256, 120, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u2umi"]
+atlas = ExtResource("4_fevg5")
+region = Rect2(120, 256, 120, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o8yv4"]
+atlas = ExtResource("4_fevg5")
+region = Rect2(240, 256, 120, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fsox3"]
+atlas = ExtResource("4_fevg5")
+region = Rect2(0, 384, 120, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bwtrr"]
+atlas = ExtResource("4_fevg5")
+region = Rect2(120, 384, 120, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gwghm"]
+atlas = ExtResource("4_fevg5")
+region = Rect2(240, 384, 120, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2unyr"]
+atlas = ExtResource("4_fevg5")
+region = Rect2(0, 128, 120, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a1c5r"]
+atlas = ExtResource("4_fevg5")
+region = Rect2(120, 128, 120, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rr03m"]
+atlas = ExtResource("4_fevg5")
+region = Rect2(240, 128, 120, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qmxys"]
+animations = [{
+"frames": [SubResource("AtlasTexture_0s4l3")],
+"loop": false,
+"name": &"Down1",
+"speed": 5.0
+}, {
+"frames": [SubResource("AtlasTexture_hawmu"), SubResource("AtlasTexture_nu2ki")],
+"loop": false,
+"name": &"Down2",
+"speed": 6.0
+}, {
+"frames": [SubResource("AtlasTexture_rfq40")],
+"loop": true,
+"name": &"Left1",
+"speed": 5.0
+}, {
+"frames": [SubResource("AtlasTexture_u2umi"), SubResource("AtlasTexture_o8yv4")],
+"loop": false,
+"name": &"Left2",
+"speed": 3.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"Nothing",
+"speed": 5.0
+}, {
+"frames": [SubResource("AtlasTexture_fsox3")],
+"loop": true,
+"name": &"Right1",
+"speed": 5.0
+}, {
+"frames": [SubResource("AtlasTexture_bwtrr"), SubResource("AtlasTexture_gwghm")],
+"loop": false,
+"name": &"Right2",
+"speed": 6.0
+}, {
+"frames": [SubResource("AtlasTexture_2unyr")],
+"loop": true,
+"name": &"Up1",
+"speed": 6.0
+}, {
+"frames": [SubResource("AtlasTexture_a1c5r"), SubResource("AtlasTexture_rr03m")],
+"loop": false,
+"name": &"Up2",
+"speed": 6.0
+}]
+
+[node name="Player" type="CharacterBody2D" groups=["Player"]]
+z_index = 2
+collision_layer = 2
+script = ExtResource("1_rhoxs")
+
+[node name="ShadowSprite" type="Sprite2D" parent="."]
+position = Vector2(0, 56)
+texture = SubResource("AtlasTexture_myxoq")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../..")
+libraries = {
+"": SubResource("AnimationLibrary_0gxtp")
+}
+
+[node name="BodySprite" type="AnimatedSprite2D" parent="."]
+frames = SubResource("SpriteFrames_uvqyn")
+animation = &"down"
+
+[node name="BodyHitbox" type="CollisionShape2D" parent="."]
+position = Vector2(0, 37)
+shape = SubResource("CapsuleShape2D_yyvpl")
+
+[node name="Tool" type="Area2D" parent="."]
+position = Vector2(0, 16)
+collision_mask = 5
+
+[node name="ToolSprite" type="AnimatedSprite2D" parent="Tool"]
+show_behind_parent = true
+position = Vector2(3, -7)
+rotation = 0.536855
+scale = Vector2(1, -1)
+frames = SubResource("SpriteFrames_4kr57")
+animation = &"Hoe"
+offset = Vector2(40.9999, -33)
+
+[node name="ToolHitbox" type="CollisionShape2D" parent="Tool"]
+position = Vector2(0, 46)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_4n5x5")
+disabled = true
+
+[node name="HandSprite" type="AnimatedSprite2D" parent="."]
+visible = false
+frames = SubResource("SpriteFrames_qmxys")
+animation = &"Down2"
+playing = true
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
+[connection signal="body_entered" from="Tool" to="." method="_on_tool_body_entered"]

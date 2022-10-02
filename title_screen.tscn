@@ -1,0 +1,219 @@
+[gd_scene load_steps=11 format=3 uid="uid://c611fpy6lvd6a"]
+
+[ext_resource type="FontFile" uid="uid://du2ydr0tns1ge" path="res://ressources/Pacifico-Regular.ttf" id="1_f07do"]
+[ext_resource type="Texture2D" uid="uid://brg21n43wgbo6" path="res://Player/character.png" id="2_25ima"]
+[ext_resource type="Texture2D" uid="uid://dx5owo86pt6wn" path="res://spritesheet/world.png" id="3_xr1rw"]
+[ext_resource type="FontFile" uid="uid://bn6kujn4q2hhp" path="res://ressources/Roboto-Regular.ttf" id="4_fh52u"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_7kf0k"]
+load_path = "res://.godot/imported/world.png-280bd7db6ffe324cde0a069938e0df84.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v3mrd"]
+atlas = SubResource("CompressedTexture2D_7kf0k")
+region = Rect2(19.5593, 15.2241, 165.745, 155.923)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yp2ko"]
+atlas = ExtResource("2_25ima")
+region = Rect2(0, 0, 61.2099, 132.011)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jjdsi"]
+atlas = ExtResource("3_xr1rw")
+region = Rect2(65.059, 186.828, 126.248, 197.925)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_878m1"]
+atlas = ExtResource("3_xr1rw")
+region = Rect2(140, 452.5, 42, 52)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_64eoq"]
+atlas = ExtResource("3_xr1rw")
+region = Rect2(4.47131, 512.141, 119.091, 136.279)
+
+[node name="TitleScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0.168627, 0.0470588, 1)
+
+[node name="Money" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -177.5
+offset_top = -311.0
+offset_right = 177.5
+offset_bottom = -195.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(20, 48)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("1_f07do")
+theme_override_font_sizes/font_size = 64
+text = "Bills to Pay"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Sprite2d3" type="Sprite2D" parent="."]
+position = Vector2(577, 354)
+texture = SubResource("AtlasTexture_v3mrd")
+
+[node name="Sprite2d" type="Sprite2D" parent="."]
+position = Vector2(574, 326)
+texture = SubResource("AtlasTexture_yp2ko")
+
+[node name="Sprite2d2" type="Sprite2D" parent="."]
+position = Vector2(724, 197)
+texture = SubResource("AtlasTexture_jjdsi")
+
+[node name="Sprite2d4" type="Sprite2D" parent="."]
+position = Vector2(415, 253)
+texture = SubResource("AtlasTexture_jjdsi")
+
+[node name="Sprite2d6" type="Sprite2D" parent="."]
+position = Vector2(230, 131)
+texture = SubResource("AtlasTexture_jjdsi")
+
+[node name="Sprite2d16" type="Sprite2D" parent="."]
+position = Vector2(255, 71)
+texture = SubResource("AtlasTexture_878m1")
+
+[node name="Sprite2d7" type="Sprite2D" parent="."]
+position = Vector2(123, 228)
+texture = SubResource("AtlasTexture_jjdsi")
+
+[node name="Sprite2d8" type="Sprite2D" parent="."]
+position = Vector2(230, 327)
+texture = SubResource("AtlasTexture_jjdsi")
+
+[node name="Sprite2d9" type="Sprite2D" parent="."]
+position = Vector2(87, 496)
+texture = SubResource("AtlasTexture_jjdsi")
+
+[node name="Sprite2d10" type="Sprite2D" parent="."]
+position = Vector2(883, 131)
+texture = SubResource("AtlasTexture_jjdsi")
+
+[node name="Sprite2d11" type="Sprite2D" parent="."]
+position = Vector2(1026, 215)
+texture = SubResource("AtlasTexture_jjdsi")
+
+[node name="Sprite2d12" type="Sprite2D" parent="."]
+position = Vector2(877, 268)
+texture = SubResource("AtlasTexture_jjdsi")
+
+[node name="Sprite2d13" type="Sprite2D" parent="."]
+position = Vector2(995, 338)
+texture = SubResource("AtlasTexture_jjdsi")
+
+[node name="Sprite2d14" type="Sprite2D" parent="."]
+position = Vector2(1068, 452)
+texture = SubResource("AtlasTexture_jjdsi")
+
+[node name="Sprite2d15" type="Sprite2D" parent="."]
+position = Vector2(940, 514)
+texture = SubResource("AtlasTexture_jjdsi")
+
+[node name="Sprite2d5" type="Sprite2D" parent="."]
+position = Vector2(576, 193)
+texture = SubResource("AtlasTexture_64eoq")
+
+[node name="Money2" type="Label" parent="."]
+offset_left = 915.0
+offset_top = 557.0
+offset_right = 1270.0
+offset_bottom = 673.0
+pivot_offset = Vector2(20, 48)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("1_f07do")
+theme_override_font_sizes/font_size = 32
+text = "Rinkuji"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Money3" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -243.0
+offset_top = 30.0
+offset_right = 243.0
+offset_bottom = 146.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(20, 48)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("1_f07do")
+theme_override_font_sizes/font_size = 48
+text = "Help Billy to get $500
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Money4" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -318.0
+offset_top = 102.0
+offset_right = 319.0
+offset_bottom = 218.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(20, 48)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("1_f07do")
+theme_override_font_sizes/font_size = 32
+text = "Be Careful, he has bills to pay every 10 seconds !
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Money5" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -318.5
+offset_top = 233.0
+offset_right = 318.5
+offset_bottom = 349.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(20, 48)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("4_fh52u")
+theme_override_font_sizes/font_size = 24
+text = "Press Esc or Select to quit
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Money6" type="Label" parent="."]
+offset_left = 196.0
+offset_top = 489.0
+offset_right = 952.0
+offset_bottom = 605.0
+pivot_offset = Vector2(20, 48)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("4_fh52u")
+theme_override_font_sizes/font_size = 64
+text = "Press Space or Start
+"
+horizontal_alignment = 1
+vertical_alignment = 1
