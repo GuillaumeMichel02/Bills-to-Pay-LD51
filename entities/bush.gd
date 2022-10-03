@@ -37,7 +37,7 @@ func hit(item):
 	if (item == "Sword" or item == "Axe") and !is_withered:
 		$/root/AudioManager.play_sound("broke")
 		if has_fruits:
-			emit_signal("player_got_something", 7, randi()%3+2)
+			emit_signal("player_got_something", 7, randi()%2+4)
 		has_fruits = false
 		is_withered = true
 		$AnimatedSprite2d.animation = "Withered"
@@ -48,7 +48,7 @@ func hit(item):
 		health -= 1
 		if health == 0:
 			if has_fruits:
-				emit_signal("player_got_something", 7, randi()%3+2)
+				emit_signal("player_got_something", 7, randi()%4+2)
 				has_fruits = false
 				$AnimatedSprite2d.animation = "Default"
 				health = 2

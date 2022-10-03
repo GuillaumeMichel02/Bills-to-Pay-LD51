@@ -88,7 +88,7 @@ func _on_player_detection_body_exited(_body):
 
 func _on_animation_player_animation_finished(anim_name):
 	if anim_name == "Death":
-		emit_signal("player_got_something", 16, randi()%3+1)
+		emit_signal("player_got_something", 16, randi()%3+2)
 		emit_signal("has_been_destroyed", self)
 
 

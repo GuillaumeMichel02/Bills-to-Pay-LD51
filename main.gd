@@ -41,12 +41,12 @@ var item_dict = {
 	5 : Array(["Hoe", 0]),
 	6 : Array(["Wood", 5]),
 	7 : Array(["Berry", 5]),
-	8 : Array(["Heart Flower", 10]),
+	8 : Array(["Heart Flower", 5]),
 	9 : Array(["Gold Flower", 40]),
-	10 : Array(["Purple Flower", 5]),
+	10 : Array(["Purple Flower", 4]),
 	11 : Array(["White Flower", 6]),
-	12 : Array(["Quenouille", 10]),
-	13 : Array(["Fish", 10]),
+	12 : Array(["Quenouille", 8]),
+	13 : Array(["Fish", 8]),
 	14 : Array(["Gold Ore", 20]),
 	15 : Array(["Rock", 2]),
 	16 : Array(["Monster Fertilizer", 10]),
@@ -174,7 +174,7 @@ func _ready():
 	flower.connect("has_been_destroyed", _on_has_been_destroyed)
 	entity_positions.push_back(Vector2(rand_x, rand_y))
 	#Heart
-	for i in range(0,12):
+	for i in range(0,6):
 		flower = flowers.instantiate()
 		$WorldEntities.add_child(flower)
 		good_position = false
@@ -189,7 +189,7 @@ func _ready():
 		flower.connect("has_been_destroyed", _on_has_been_destroyed)
 		entity_positions.push_back(Vector2(rand_x, rand_y))
 	#Purple
-	for i in range(0,8):
+	for i in range(0,6):
 		flower = flowers.instantiate()
 		$WorldEntities.add_child(flower)
 		good_position = false
@@ -204,7 +204,7 @@ func _ready():
 		flower.connect("has_been_destroyed", _on_has_been_destroyed)
 		entity_positions.push_back(Vector2(rand_x, rand_y))
 
-	for i in range(0,8):
+	for i in range(0,6):
 		flower = flowers.instantiate()
 		$WorldEntities.add_child(flower)
 		good_position = false

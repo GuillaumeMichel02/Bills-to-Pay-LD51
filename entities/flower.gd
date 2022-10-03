@@ -23,7 +23,10 @@ func _on_countdown_restart():
 		
 func hit(item):
 	if item not in ["Sword", "Axe", "Pickaxe", "Fishing Rod"]:
-		emit_signal("player_got_something", item_id, amount)
+		if item == "Hoe":
+			emit_signal("player_got_something", item_id, amount)
+		else:
+			emit_signal("player_got_something", item_id, 1)
 	else:
 		$/root/AudioManager.play_sound("broke")
 	emit_signal("has_been_destroyed", self)
