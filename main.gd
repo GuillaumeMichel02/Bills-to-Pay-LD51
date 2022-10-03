@@ -678,6 +678,7 @@ func game_won():
 	$/root/AudioManager.play_sound("nice")
 	$CanvasLayer2/GameWon.visible = true
 	$CanvasLayer2/GameWon/ScoreMax.text = "You saved Billy in "+str(snapped(total_time,0.001))+" seconds!"
+	is_game_over = true
 	
 func _unhandled_input(event):
 	if event.is_pressed() and event.is_action("mute"):
