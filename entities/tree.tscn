@@ -1,7 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://bsr0d30oj21oo"]
+[gd_scene load_steps=11 format=3 uid="uid://bsr0d30oj21oo"]
 
 [ext_resource type="Script" path="res://entities/tree.gd" id="1_r28ny"]
 [ext_resource type="Texture2D" uid="uid://dx5owo86pt6wn" path="res://spritesheet/world.png" id="2_ctgxb"]
+[ext_resource type="PackedScene" uid="uid://bx53t6j42lqsf" path="res://UI/cursor.tscn" id="3_y4l6n"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rw7wb"]
 atlas = ExtResource("2_ctgxb")
@@ -105,9 +106,12 @@ texture = SubResource("AtlasTexture_v3tl5")
 
 [node name="TreeCollisionBox" type="CollisionPolygon2D" parent="."]
 position = Vector2(-1, 1)
-polygon = PackedVector2Array(-39, 31, 39, 31, 31, -15, 26, -43, -21, -43, -28, -16)
+polygon = PackedVector2Array(-31, 30, 33, 30, 31, -15, 26, -43, -21, -43, -28, -16)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_6efcp")
 }
+
+[node name="Cursor" parent="." instance=ExtResource("3_y4l6n")]
+animation = &"white"

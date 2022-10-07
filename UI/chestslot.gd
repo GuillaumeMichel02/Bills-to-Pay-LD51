@@ -16,6 +16,10 @@ func set_out(out):
 	else:
 		self.animation = "inactive"
 
+func set_cancel():
+	$Item.animation = "Cancel"
+	$Item.scale = Vector2(1,1)
+
 func set_item(new_id, item_name, amount):
 	item_id = new_id
 	if item_id > 0:

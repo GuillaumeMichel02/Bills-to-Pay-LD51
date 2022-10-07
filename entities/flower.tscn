@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://7iqah36s72j0"]
+[gd_scene load_steps=10 format=3 uid="uid://7iqah36s72j0"]
 
 [ext_resource type="Texture2D" uid="uid://dx5owo86pt6wn" path="res://spritesheet/world.png" id="1_qfh6i"]
 [ext_resource type="Script" path="res://entities/flower.gd" id="1_ttbd8"]
+[ext_resource type="PackedScene" uid="uid://bx53t6j42lqsf" path="res://UI/cursor.tscn" id="3_tlepe"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_yuqn7"]
 radius = 29.0
@@ -56,3 +57,5 @@ shape = SubResource("CircleShape2D_yuqn7")
 [node name="FlowerSprite" type="AnimatedSprite2D" parent="."]
 frames = SubResource("SpriteFrames_82awg")
 animation = &"Heart Flower"
+
+[node name="Cursor" parent="." instance=ExtResource("3_tlepe")]

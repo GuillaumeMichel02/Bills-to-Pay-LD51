@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://ti3oo3wxxgjl"]
+[gd_scene load_steps=19 format=3 uid="uid://ti3oo3wxxgjl"]
 
 [ext_resource type="Texture2D" uid="uid://c45w44y0oo0gj" path="res://spritesheet/chest_active.png" id="1_n6jrj"]
 [ext_resource type="Texture2D" uid="uid://dx5owo86pt6wn" path="res://spritesheet/world.png" id="1_vo4i7"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://cse6nes7vdo5w" path="res://spritesheet/chest_out.png" id="3_hye7o"]
 [ext_resource type="FontFile" uid="uid://du2ydr0tns1ge" path="res://ressources/Pacifico-Regular.ttf" id="3_uydn2"]
 [ext_resource type="Script" path="res://UI/chestslot.gd" id="4_n6liv"]
+[ext_resource type="Texture2D" uid="uid://dm5tfifwrilg" path="res://spritesheet/chest_cancel.png" id="6_5ovlw"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_yfvkv"]
 atlas = ExtResource("1_n6jrj")
@@ -41,73 +42,25 @@ animations = [{
 atlas = ExtResource("1_vo4i7")
 region = Rect2(320, 512, 64, 64)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_hc0nt"]
+atlas = ExtResource("6_5ovlw")
+region = Rect2(0, 0, 384, 384)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_tme62"]
 atlas = ExtResource("1_vo4i7")
 region = Rect2(256, 448, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_r5diq"]
-atlas = ExtResource("1_vo4i7")
-region = Rect2(128, 448, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_b11ps"]
-atlas = ExtResource("1_vo4i7")
-region = Rect2(128, 512, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_tyt3q"]
-atlas = ExtResource("1_vo4i7")
-region = Rect2(512, 448, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_o1dkm"]
-atlas = ExtResource("1_vo4i7")
-region = Rect2(576, 192, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_hxcxl"]
-atlas = ExtResource("1_vo4i7")
-region = Rect2(576, 512, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_b6lor"]
-atlas = ExtResource("1_vo4i7")
-region = Rect2(576, 128, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3anyr"]
 atlas = ExtResource("1_vo4i7")
 region = Rect2(256, 576, 64, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_5me22"]
-atlas = ExtResource("1_vo4i7")
-region = Rect2(512, 512, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_fjrsn"]
-atlas = ExtResource("1_vo4i7")
-region = Rect2(256, 192, 64, 64)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_rlg6k"]
 atlas = ExtResource("1_vo4i7")
 region = Rect2(320, 448, 64, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ktpbs"]
-atlas = ExtResource("1_vo4i7")
-region = Rect2(576, 256, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_81irh"]
-atlas = ExtResource("1_vo4i7")
-region = Rect2(448, 448, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_74j2l"]
-atlas = ExtResource("1_vo4i7")
-region = Rect2(576, 576, 64, 64)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_gxs6l"]
 atlas = ExtResource("1_vo4i7")
 region = Rect2(320, 576, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_vktsr"]
-atlas = ExtResource("1_vo4i7")
-region = Rect2(576, 320, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_nctd5"]
-atlas = ExtResource("1_vo4i7")
-region = Rect2(576, 0, 64, 64)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_45iso"]
 animations = [{
@@ -116,34 +69,14 @@ animations = [{
 "name": &"Axe",
 "speed": 5.0
 }, {
+"frames": [SubResource("AtlasTexture_hc0nt")],
+"loop": true,
+"name": &"Cancel",
+"speed": 5.0
+}, {
 "frames": [SubResource("AtlasTexture_tme62")],
 "loop": true,
 "name": &"Fishing Rod",
-"speed": 5.0
-}, {
-"frames": [SubResource("AtlasTexture_r5diq"), SubResource("AtlasTexture_b11ps")],
-"loop": true,
-"name": &"Gold Bird",
-"speed": 5.0
-}, {
-"frames": [SubResource("AtlasTexture_tyt3q")],
-"loop": true,
-"name": &"Gold Fish",
-"speed": 5.0
-}, {
-"frames": [SubResource("AtlasTexture_o1dkm")],
-"loop": true,
-"name": &"Gold Flower",
-"speed": 5.0
-}, {
-"frames": [SubResource("AtlasTexture_hxcxl")],
-"loop": true,
-"name": &"Gold Ore",
-"speed": 5.0
-}, {
-"frames": [SubResource("AtlasTexture_b6lor")],
-"loop": true,
-"name": &"Heart Flower",
 "speed": 5.0
 }, {
 "frames": [SubResource("AtlasTexture_3anyr")],
@@ -151,54 +84,19 @@ animations = [{
 "name": &"Hoe",
 "speed": 5.0
 }, {
-"frames": [SubResource("AtlasTexture_5me22")],
-"loop": true,
-"name": &"Monster Fertilizer",
-"speed": 5.0
-}, {
-"frames": [SubResource("AtlasTexture_fjrsn")],
-"loop": true,
-"name": &"Nothing",
-"speed": 5.0
-}, {
 "frames": [SubResource("AtlasTexture_rlg6k")],
 "loop": true,
 "name": &"Pickaxe",
-"speed": 5.0
-}, {
-"frames": [SubResource("AtlasTexture_ktpbs")],
-"loop": true,
-"name": &"Purple Flower",
-"speed": 5.0
-}, {
-"frames": [SubResource("AtlasTexture_81irh")],
-"loop": true,
-"name": &"Quenouille",
-"speed": 5.0
-}, {
-"frames": [SubResource("AtlasTexture_74j2l")],
-"loop": true,
-"name": &"Rock",
 "speed": 5.0
 }, {
 "frames": [SubResource("AtlasTexture_gxs6l")],
 "loop": true,
 "name": &"Sword",
 "speed": 5.0
-}, {
-"frames": [SubResource("AtlasTexture_vktsr")],
-"loop": true,
-"name": &"White Flower",
-"speed": 5.0
-}, {
-"frames": [SubResource("AtlasTexture_nctd5")],
-"loop": true,
-"name": &"Wood",
-"speed": 5.0
 }]
 
 [node name="Chestslot" type="AnimatedSprite2D"]
-scale = Vector2(0.4, 0.4)
+scale = Vector2(0.35, 0.35)
 frames = SubResource("SpriteFrames_tuflg")
 animation = &"inactive"
 script = ExtResource("4_n6liv")
@@ -216,7 +114,6 @@ offset_right = 172.0
 offset_bottom = 316.0
 theme_override_fonts/font = ExtResource("3_uydn2")
 theme_override_font_sizes/font_size = 64
-text = " Rent : "
 vertical_alignment = 1
 
 [node name="ItemName" type="Label" parent="."]

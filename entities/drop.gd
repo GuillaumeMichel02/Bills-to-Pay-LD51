@@ -30,6 +30,17 @@ func hit(item):
 	if item not in ["Sword", "Axe", "Pickaxe", "Hoe"]:
 		emit_signal("player_got_something", item_id, amount)
 	emit_signal("has_been_destroyed", self)
-	
+
+func get_interaction_cursor(item):
+	if item not in ["Sword", "Axe", "Pickaxe", "Hoe"]:
+		$Cursor.animation = "white"
+	else:
+		$Cursor.animation = "red"
+	$Cursor/AnimationPlayer.play("cursor")
+	$Cursor.visible = true
+
+func remove_interaction_cursor():
+	$Cursor.visible = false
+
 func position_array():
 	return [position]

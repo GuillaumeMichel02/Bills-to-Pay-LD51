@@ -3,6 +3,7 @@ extends StaticBody2D
 @export var is_cut: bool = false
 var entity_position_memory: Array
 var health = 3
+var aimed_by_player = false
 
 signal player_got_something(item_id, amount)
 signal has_been_destroyed(body)
@@ -25,14 +26,25 @@ func hit(item):
 					
 				emit_signal("has_been_destroyed", self)
 			else:
-				emit_signal("player_got_something", 6, randi()%3+1)
+				emit_signal("player_got_something", 6, randi()%2+3)
 				is_cut = true
+				$Cursor.animation = "red"
 				$TreeTop.visible = false
 				$TreeBase.animation = "Cut"
 				health = 1
 				
 		$AnimationPlayer.play("hit")
 		print(health)
+		
+func get_interaction_cursor(item):
+	if item == "Axe":
+		$Cursor/AnimationPlayer.play("cursor")
+		$Cursor.visible = true
+	else:
+		$Cursor.visible = false
+
+func remove_interaction_cursor():
+	$Cursor.visible = false
 		
 func position_array():
 	return [Vector2(position.x-32,position.y), Vector2(position.x+32,position.y)]

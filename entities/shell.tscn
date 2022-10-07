@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://svbtepkb7rvk"]
+[gd_scene load_steps=8 format=3 uid="uid://svbtepkb7rvk"]
 
 [ext_resource type="Texture2D" uid="uid://dx5owo86pt6wn" path="res://spritesheet/world.png" id="1_1jfqg"]
 [ext_resource type="Script" path="res://entities/shell.gd" id="1_5fq0b"]
+[ext_resource type="PackedScene" uid="uid://bx53t6j42lqsf" path="res://UI/cursor.tscn" id="3_wwdmf"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_nhkon"]
 radius = 35.0
@@ -37,3 +38,5 @@ shape = SubResource("CircleShape2D_nhkon")
 [node name="ShellSprite" type="AnimatedSprite2D" parent="."]
 frames = SubResource("SpriteFrames_xmbe7")
 animation = &"Conch"
+
+[node name="Cursor" parent="." instance=ExtResource("3_wwdmf")]

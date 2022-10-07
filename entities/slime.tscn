@@ -1,7 +1,8 @@
-[gd_scene load_steps=12 format=3 uid="uid://b8qdl7vcfq7qs"]
+[gd_scene load_steps=13 format=3 uid="uid://b8qdl7vcfq7qs"]
 
 [ext_resource type="Texture2D" uid="uid://dx5owo86pt6wn" path="res://spritesheet/world.png" id="1_jq4bj"]
 [ext_resource type="Script" path="res://entities/slime.gd" id="1_mtjg1"]
+[ext_resource type="PackedScene" uid="uid://bx53t6j42lqsf" path="res://UI/cursor.tscn" id="3_sxhb2"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_yvfi8"]
 atlas = ExtResource("1_jq4bj")
@@ -173,6 +174,8 @@ collision_mask = 2
 position = Vector2(0, 21)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_w6mj0")
+
+[node name="Cursor" parent="." instance=ExtResource("3_sxhb2")]
 
 [connection signal="timeout" from="Hurt" to="." method="_on_hurt_timeout"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

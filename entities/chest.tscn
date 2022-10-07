@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://b7ap6a523eopu"]
+[gd_scene load_steps=7 format=3 uid="uid://b7ap6a523eopu"]
 
 [ext_resource type="Script" path="res://entities/chest.gd" id="1_yftyw"]
 [ext_resource type="Texture2D" uid="uid://dx5owo86pt6wn" path="res://spritesheet/world.png" id="2_ug0ks"]
+[ext_resource type="PackedScene" uid="uid://bx53t6j42lqsf" path="res://UI/cursor.tscn" id="3_ql05g"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_uyec7"]
 atlas = ExtResource("2_ug0ks")
@@ -30,3 +31,6 @@ texture = SubResource("AtlasTexture_qse7v")
 [node name="CollisionShape2d" type="CollisionShape2D" parent="."]
 position = Vector2(1, -13.5)
 shape = SubResource("RectangleShape2D_eqvuu")
+
+[node name="Cursor" parent="." instance=ExtResource("3_ql05g")]
+animation = &"white"

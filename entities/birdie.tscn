@@ -1,7 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://beomjuapytlt5"]
+[gd_scene load_steps=12 format=3 uid="uid://beomjuapytlt5"]
 
 [ext_resource type="Script" path="res://entities/birdie.gd" id="1_2owsx"]
 [ext_resource type="Texture2D" uid="uid://dx5owo86pt6wn" path="res://spritesheet/world.png" id="1_7rijw"]
+[ext_resource type="PackedScene" uid="uid://bx53t6j42lqsf" path="res://UI/cursor.tscn" id="2_pm17o"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2o8vy"]
 atlas = ExtResource("1_7rijw")
@@ -120,6 +121,8 @@ collision_mask = 2
 
 [node name="BirdieAwareCollision" type="CollisionShape2D" parent="BirdieAwareBox"]
 shape = SubResource("CircleShape2D_77db3")
+
+[node name="Cursor" parent="." instance=ExtResource("2_pm17o")]
 
 [connection signal="timeout" from="AwareTimer" to="." method="_on_aware_timer_timeout"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

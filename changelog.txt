@@ -1,0 +1,51 @@
+2.0:
+
+Gameplay :
+- 2 modes added : Rush 2000 (instead of 500), and Survival (bills increase every 10s)
+
+UI : 
+- A new slot has been added to the chest
+- A cursor shows what is in range and can be hit with the player's equipped tool/item
+- With tools or items that can interact on the ground, a square is shown to tell on which tile the player will interact
+
+Controls :
+- Controller default inputs changed (Action -> A/B Slots -> X/Y)
+- Keyboard controls can be remapped
+
+Player :
+- Equipped tool is always shown on Player
+- Can move diagonally (always facing left or right while doing so on Keyboard)
+
+Entities :
+Monster
+- Monster is paused on pause screen
+- Monster can be hurt if player is hurt
+- Added sound effect when monster hits player
+- Removed useless interaction with Fishing Rod
+Bush
+- Hitting a berry bush without a tool gives 1-2 berries per hit instead of 2-6 when hp is 0
+- Hitting a berry bush with a sword or an axe gives 4 - 6 berries
+- berry bush now has 3hp instead of 4
+- Bush may spawn as berry bush or withered bush (same chance as turning into them during the game)
+- Evolve into a tree when monster fertilized (needs empty spaces around it)
+Tree
+- Cutting a tree yields 3 - 4 wood (before: 1 - 3)
+- Reduced collision box so that the player can move between two horizontal trees
+Tiled Grass
+- Chance to spawn a flower next cycle with Monster Fertilizer is 100% (before 50%)
+- Chance to spawn a flower next cycle without MF is 1 out of 6 (before 1 out of 10)
+- Chance to spawn a gold flower next cycle with gold ore without MF is 1 out of 8 (before 1 out of 10)
+Rock
+- Gold rocks gives 1 - 3 gold ores with pickaxe (before 1)
+- Hitting a normal rock with an Axe has 1/30 chance to give 1 gold ore and 1/3 chance to give 1 rock
+- Hitting a gold rock with an Axe has 1/10 chance to give 1 gold ore and 7/30 chances to give 1 rock
+- Hitting any rock with an Axe does not decrease the rock's hp
+
+Items :
+- Berry value is 4 instead of 5
+- Gold Flower value is 80 instead of 40
+- Heart Flower gives moves the 10s cycle 5 seconds back (before 3)
+- White Flower can be used, and increase the player's speed
+
+
+

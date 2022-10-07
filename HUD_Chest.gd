@@ -20,9 +20,6 @@ func _unhandled_input(event):
 	if event.is_pressed() and event.is_action("action"):
 		emit_signal("give_item_current")
 		emit_signal("chest_quit")
-	
-	if event.is_pressed and (event.is_action("left") or event.is_action("right") or event.is_action("up") or event.is_action("down")):
-		emit_signal("chest_quit")
 		
 	if event.is_pressed() and event.is_action("hotbar_left"):
 		emit_signal("chestbar_left_signal")

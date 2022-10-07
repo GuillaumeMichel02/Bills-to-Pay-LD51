@@ -1,8 +1,9 @@
-[gd_scene load_steps=28 format=3 uid="uid://dua1fe8iqgyw1"]
+[gd_scene load_steps=29 format=3 uid="uid://c2j2id6nvibw5"]
 
-[ext_resource type="Script" path="res://ressources/drop.gd" id="1_p3ipj"]
+[ext_resource type="Script" path="res://entities/drop.gd" id="1_p3ipj"]
 [ext_resource type="Texture2D" uid="uid://dx5owo86pt6wn" path="res://spritesheet/world.png" id="2_j5lyb"]
 [ext_resource type="FontFile" uid="uid://du2ydr0tns1ge" path="res://ressources/Pacifico-Regular.ttf" id="3_a56vy"]
+[ext_resource type="PackedScene" uid="uid://bx53t6j42lqsf" path="res://UI/cursor.tscn" id="4_jfqia"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_l3rmn"]
 atlas = ExtResource("2_j5lyb")
@@ -223,3 +224,5 @@ offset_right = 40.0
 offset_bottom = 23.0
 theme_override_fonts/font = ExtResource("3_a56vy")
 theme_override_font_sizes/font_size = 32
+
+[node name="Cursor" parent="." instance=ExtResource("4_jfqia")]

@@ -131,10 +131,10 @@ tracks/0/path = NodePath("Player/Tool/ToolSprite:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.05, 0.2),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 0.05, 0.175, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
-"values": [Vector2(-15, -0.999998), Vector2(3, -7), Vector2(3, -7)]
+"values": [Vector2(-15, -0.999998), Vector2(3, -7), Vector2(3, -7), Vector2(-7, 29)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -143,10 +143,10 @@ tracks/1/path = NodePath("Player/Tool/ToolSprite:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.05, 0.2),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 0.05, 0.175, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
-"values": [3.83248, 0.536855, 0.536855]
+"values": [3.83248, 0.536855, 0.536855, 3.69312]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -155,10 +155,10 @@ tracks/2/path = NodePath("Player/Tool/ToolSprite:scale")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.05, 0.2),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 0.05, 0.175, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
-"values": [Vector2(1, -1), Vector2(1, -1), Vector2(1, -1)]
+"values": [Vector2(1, -1), Vector2(1, -1), Vector2(1, -1), Vector2(1, -1)]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -167,10 +167,10 @@ tracks/3/path = NodePath("Player/Tool/ToolSprite:z_index")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.05, 0.2),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 0.05, 0.175, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
-"values": [0, 0, 0]
+"values": [0, 0, 0, 0]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
@@ -208,10 +208,10 @@ tracks/0/path = NodePath("Player/Tool/ToolSprite:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.05, 0.2),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 0.05, 0.175, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
-"values": [Vector2(-22, 10), Vector2(-10, 23), Vector2(-10, 23)]
+"values": [Vector2(-22, 10), Vector2(-10, 23), Vector2(-10, 23), Vector2(-17, 10)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -220,10 +220,10 @@ tracks/1/path = NodePath("Player/Tool/ToolSprite:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.05, 0.2),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 0.05, 0.175, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
-"values": [1.40813, -0.404495, -0.404495]
+"values": [1.40813, -0.404495, -0.404495, 4.71064]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -232,10 +232,10 @@ tracks/2/path = NodePath("Player/Tool/ToolSprite:scale")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.05, 0.2),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 0.05, 0.175, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
-"values": [Vector2(-1, 1), Vector2(-1, 1), Vector2(-1, 1)]
+"values": [Vector2(-1, 1), Vector2(-1, 1), Vector2(-1, 1), Vector2(1, -1)]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -268,10 +268,10 @@ tracks/5/path = NodePath("Player/Tool/ToolSprite:z_index")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(0, 0.05, 0.2),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 0.05, 0.175, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
-"values": [-1, -1, -1]
+"values": [-1, -1, -1, -1]
 }
 
 [sub_resource type="Animation" id="Animation_ld1im"]
@@ -285,10 +285,10 @@ tracks/0/path = NodePath("Player/Tool/ToolSprite:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.05, 0.2),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 0.05, 0.175, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
-"values": [Vector2(26, 5), Vector2(9, 18), Vector2(9, 18)]
+"values": [Vector2(26, 5), Vector2(9, 18), Vector2(9, 18), Vector2(19, 21)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -297,10 +297,10 @@ tracks/1/path = NodePath("Player/Tool/ToolSprite:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.05, 0.2),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 0.05, 0.175, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
-"values": [4.75153, 0.431259, 0.431259]
+"values": [4.75153, 0.431259, 0.431259, 4.71064]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -309,10 +309,10 @@ tracks/2/path = NodePath("Player/Tool/ToolSprite:scale")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.05, 0.2),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 0.05, 0.175, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
-"values": [Vector2(1, 1), Vector2(1, 1), Vector2(1, 1)]
+"values": [Vector2(1, 1), Vector2(1, 1), Vector2(1, 1), Vector2(1, 1)]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -321,10 +321,10 @@ tracks/3/path = NodePath("Player/Tool/ToolSprite:z_index")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.05, 0.2),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 0.05, 0.175, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
-"values": [0, 0, 0]
+"values": [0, 0, 0, 0]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
@@ -362,10 +362,10 @@ tracks/0/path = NodePath("Player/Tool/ToolSprite:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.05, 0.2),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 0.05, 0.175, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
-"values": [Vector2(17, 0), Vector2(5, 40), Vector2(5, 40)]
+"values": [Vector2(17, 0), Vector2(5, 40), Vector2(5, 40), Vector2(11, 28)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -374,10 +374,10 @@ tracks/1/path = NodePath("Player/Tool/ToolSprite:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.05, 0.2),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 0.05, 0.175, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
-"values": [4.27285, 3.60585, 3.60585]
+"values": [4.27285, 3.60585, 3.60585, 4.24464]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -410,10 +410,10 @@ tracks/4/path = NodePath("Player/Tool/ToolSprite:scale")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0, 0.05, 0.2),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 0.05, 0.175, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
-"values": [Vector2(1, -1), Vector2(1, -1), Vector2(1, -1)]
+"values": [Vector2(1, -1), Vector2(1, -1), Vector2(1, -1), Vector2(1, -1)]
 }
 tracks/5/type = "value"
 tracks/5/imported = false
@@ -422,10 +422,10 @@ tracks/5/path = NodePath("Player/Tool/ToolSprite:z_index")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(0, 0.05, 0.2),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 0.05, 0.175, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
-"values": [-1, -1, -1]
+"values": [-1, -1, -1, -1]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_0gxtp"]
@@ -668,8 +668,8 @@ collision_mask = 5
 
 [node name="ToolSprite" type="AnimatedSprite2D" parent="Tool"]
 show_behind_parent = true
-position = Vector2(3, -7)
-rotation = 0.536855
+position = Vector2(-7, 29)
+rotation = 3.69312
 scale = Vector2(1, -1)
 frames = SubResource("SpriteFrames_4kr57")
 animation = &"Hoe"
@@ -686,6 +686,15 @@ visible = false
 frames = SubResource("SpriteFrames_qmxys")
 animation = &"Down2"
 playing = true
+
+[node name="InteractionCheck" type="Area2D" parent="."]
+position = Vector2(0, 16)
+collision_mask = 5
+
+[node name="Hitbox" type="CollisionShape2D" parent="InteractionCheck"]
+position = Vector2(0, 46)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_4n5x5")
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
 [connection signal="body_entered" from="Tool" to="." method="_on_tool_body_entered"]

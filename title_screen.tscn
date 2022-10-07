@@ -157,7 +157,7 @@ pivot_offset = Vector2(20, 48)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("1_f07do")
 theme_override_font_sizes/font_size = 48
-text = "Help Billy to get $500
+text = "Help Billy getting $500
 "
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -202,6 +202,48 @@ theme_override_font_sizes/font_size = 24
 text = "Press Esc or Select to quit
 "
 horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="GameMode" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 60.0
+offset_top = -324.0
+offset_right = 569.0
+offset_bottom = -279.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(20, 48)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("4_fh52u")
+theme_override_font_sizes/font_size = 24
+text = "Rush 500 (G to change)
+"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="ResetInputs" type="Label" parent="."]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -571.0
+offset_top = -324.0
+offset_right = -87.0
+offset_bottom = -279.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(20, 48)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("4_fh52u")
+theme_override_font_sizes/font_size = 24
+text = "Press R to reset inputs
+"
 vertical_alignment = 1
 
 [node name="Money6" type="Label" parent="."]

@@ -1,0 +1,20 @@
+(Done) Tiled grass = faster plants
+(Done) Tree = 3 - 4 instead of 1 - 3
+(Done) Gold Flower = worth more
+(Done) Gold = less hits, more gold
+(Done) Heart Flower = Timer -5
+(No) White Flower = Implement spawn if trees
+(Done) White Flower = boost speed
+(Done) rock and axe = less gold but stil gold
+(Done) Un moyen de faire pousser des arbres
+- Faire un mode survival
+- Faire un mode $2000
+(Done) buisson : commencer avec baies
+(No) coop
+(Done) mouvement diagonal
+(Done) show selected tile (carré de pré selection)
+(Done) show tool on character
+(Done) meilleur coffre (slot "Back" ?)
+possibilité de changer les inputs (dans l'écran de pause)
+Message system
+mettre un /500 pour l'objectif

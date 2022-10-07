@@ -3,6 +3,7 @@ extends StaticBody2D
 @export var is_aware: bool = false
 var intruder
 var entity_position_memory: Array
+var aimed_by_player = false
 
 signal player_got_something(item_id, amount)
 signal has_been_destroyed(body)
@@ -23,6 +24,15 @@ func hit(item):
 		$BirdieAwareBox/BirdieAwareCollision.set_deferred("disabled", true)
 		$AnimationPlayer.play("Fly")
 		$/root/AudioManager.play_sound("birdfly")
+		
+func get_interaction_cursor(item):
+	if item == "Nothing":
+		$Cursor.animation = "white"
+		$Cursor/AnimationPlayer.play("cursor")
+		$Cursor.visible = true
+
+func remove_interaction_cursor():
+	$Cursor.visible = false
 		
 func position_array():
 	return [position]

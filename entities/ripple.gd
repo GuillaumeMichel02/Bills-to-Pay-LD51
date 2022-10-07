@@ -5,12 +5,6 @@ signal player_got_something(item_id, amount)
 signal has_been_destroyed(body)
 
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-	
-
-
 
 	
 func _on_countdown_restart():
@@ -28,7 +22,17 @@ func hit(item):
 		else:
 			$AnimationPlayer.play("Fishing Failure")
 			
-		
+func get_interaction_cursor(item):
+	if item == "Fishing Rod":
+		$Cursor.animation = "white"
+		$Cursor/AnimationPlayer.play("cursor")
+		$Cursor.visible = true
+	else:
+		$Cursor.visible = false
+
+func remove_interaction_cursor():
+	$Cursor.visible = false
+
 func position_array():
 	return [position]
 

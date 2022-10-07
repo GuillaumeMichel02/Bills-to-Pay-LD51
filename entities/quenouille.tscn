@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://dje17okt0rqib"]
+[gd_scene load_steps=7 format=3 uid="uid://dje17okt0rqib"]
 
 [ext_resource type="Script" path="res://entities/quenouille.gd" id="1_d03nj"]
 [ext_resource type="Texture2D" uid="uid://dx5owo86pt6wn" path="res://spritesheet/world.png" id="2_rych0"]
+[ext_resource type="PackedScene" uid="uid://bx53t6j42lqsf" path="res://UI/cursor.tscn" id="3_hvpbl"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_yuqn7"]
 radius = 38.0132
@@ -29,3 +30,5 @@ shape = SubResource("CircleShape2D_yuqn7")
 [node name="FlowerSprite" type="AnimatedSprite2D" parent="."]
 frames = SubResource("SpriteFrames_82awg")
 animation = &"Quenouille"
+
+[node name="Cursor" parent="." instance=ExtResource("3_hvpbl")]

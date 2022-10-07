@@ -1,6 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://dm88880tmlqay"]
+[gd_scene load_steps=11 format=3 uid="uid://dm88880tmlqay"]
 
 [ext_resource type="Script" path="res://entities/bush.gd" id="1_yv1ao"]
+[ext_resource type="PackedScene" uid="uid://bx53t6j42lqsf" path="res://UI/cursor.tscn" id="2_8r4ty"]
 [ext_resource type="Texture2D" uid="uid://dx5owo86pt6wn" path="res://spritesheet/world.png" id="2_exx0x"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rjk48"]
@@ -85,3 +86,5 @@ animation = &"Default"
 libraries = {
 "": SubResource("AnimationLibrary_mvmdm")
 }
+
+[node name="Cursor" parent="." instance=ExtResource("2_8r4ty")]

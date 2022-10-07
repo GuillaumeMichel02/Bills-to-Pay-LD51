@@ -12,6 +12,8 @@ var direction
 var player
 var player_seen = false
 var is_hurt = false
+var is_player_hurt = false
+var aimed_by_player = false
 
 func _ready():
 	random_direction = randf_range(PI,-PI)
@@ -30,7 +32,7 @@ func _physics_process(_delta):
 			player_seen = true
 			player = entity
 			
-	if is_hurt:
+	if is_hurt or is_player_hurt:
 		direction = player.get_angle_to(position)
 	elif player_seen:
 		direction = get_angle_to(player.position)
@@ -54,12 +56,10 @@ func hit(item):
 	if item == "Purple Flower":
 		health = 0
 		emit_signal("item_used")
-	if item == "Fishing Rod":
-		health += 1
 	if item == "Sword":
 		health -= 1
 		is_hurt = true
-		set_collision_mask_value(2, false)
+		$HarmHitBox.set_collision_mask_value(2, false)
 		$Sprite2d.modulate.a = 0.5
 		$Sprite2d/Sprite2d.modulate.a = 0.5
 		speed = 300
@@ -68,6 +68,15 @@ func hit(item):
 	if health == 0:
 		$/root/AudioManager.play_sound("broke")
 		$AnimationPlayer.play("Death")
+		
+func get_interaction_cursor(item):
+	if item == "Purple Flower" or item == "Sword":
+		$Cursor.animation = "white"
+		$Cursor/AnimationPlayer.play("cursor")
+		$Cursor.visible = true
+
+func remove_interaction_cursor():
+	$Cursor.visible = false
 	
 
 
@@ -94,7 +103,8 @@ func _on_animation_player_animation_finished(anim_name):
 
 func _on_hurt_timeout():
 	is_hurt = false
-	set_collision_mask_value(2, true)
+	is_player_hurt = false
+	$HarmHitBox.set_collision_mask_value(2, true)
 	$Sprite2d.modulate.a = 1
 	$Sprite2d/Sprite2d.modulate.a = 1
 	if health != 1:
@@ -102,9 +112,10 @@ func _on_hurt_timeout():
 
 
 func _on_harm_hit_box_body_entered(body):
-	if body.is_in_group("Player"):
+	if body.is_in_group("Player") and !is_player_hurt:
 		emit_signal("player_hurt")
-		is_hurt = true
+		is_player_hurt = true
+		$HarmHitBox.set_collision_mask_value(2, false)
 		$Hurt.start()
 	
 func position_array():
